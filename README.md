@@ -1,7 +1,7 @@
-# react-boilerplate
+# generator-react
 react脚手架(react+redux+react-router+eslint+karma+react devTools)
 
-使用网上现成的脚手架生成，改造
+基于YeoMan的react脚手架生成，改造
 
 具体地址：[generator-react-webpack](https://github.com/react-webpack-generators/generator-react-webpack)
 
