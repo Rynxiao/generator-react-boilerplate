@@ -1,4 +1,7 @@
 # generator-react
+
+> Yeoman generator for [ReactJS](http://facebook.github.io/react/) - lets you quickly set up a project including karma test runner and [Webpack](http://webpack.github.io/) module system.
+
 react脚手架(react+redux+react-router+eslint+karma+react devTools)
 
 基于YeoMan的react脚手架生成，改造
