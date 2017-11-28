@@ -1,0 +1,46 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": "airbnb",
+    "rules": {
+        "comma-dangle": ["off"],
+        "import/extensions": 0,
+        "no-unused-vars": ["warn"],
+        "object-curly-spacing": ["off"],
+        "padded-blocks": ["off"],
+        "react/jsx-closing-bracket-location": ["off"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-space-before-closing": ["off"],
+        "react/prefer-stateless-function": ["off"],
+        "react/jsx-indent": ["error", 4],
+        "no-underscore-dangle": [ "error", { "allowAfterThis": true }],
+        "import/no-unresolved": ["error", {
+            "ignore": [
+                "config",
+                "components/",
+                "stores/",
+                "actions/",
+                "sources/",
+                "styles/",
+                "images/"
+            ]
+        }],
+        "indent": ["error", 4, {
+            "SwitchCase": 1,
+            "VariableDeclarator": 1,
+            "outerIIFEBody": 1,
+            "FunctionDeclaration": {
+                "parameters": 1,
+                "body": 1
+            },
+            "FunctionExpression": {
+                "parameters": 1,
+                "body": 1
+            }
+        }]
+    }
+}
