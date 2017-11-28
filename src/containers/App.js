@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import { addItem } from '../actions/';
 import Main from '../components/App';
 
@@ -15,7 +16,7 @@ import Main from '../components/App';
 class App extends Component {
     render() {
         const { actions, items } = this.props;
-        return <Main actions={ actions } items={ items }/>;
+        return <Main actions={ actions } items={ items } { ...this.props }/>;
     }
 }
 

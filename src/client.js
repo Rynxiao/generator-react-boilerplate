@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { Route } from 'react-router'
+import { Route, BrowserRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 
 import App from './containers/App';
 import configureStore from './stores';
+import routes from './routes/';
+import { renderRoutes } from 'react-router-config'
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -17,7 +19,7 @@ ReactDOM.render(
     <AppContainer>
         <Provider store={ store }>
             <ConnectedRouter history={ history }>
-                <Route exact path="/" component={ App }/>
+                <BrowserRouter>{ renderRoutes(routes) }</BrowserRouter>
             </ConnectedRouter>
         </Provider>
     </AppContainer>,
@@ -32,7 +34,7 @@ if (module.hot) {
             <AppContainer>
                 <Provider store={ store }>
                     <ConnectedRouter history={ history }>
-                        <NextApp />
+                        <Route exact path="/" component={ NextApp }/>
                     </ConnectedRouter>
                 </Provider>
             </AppContainer>,

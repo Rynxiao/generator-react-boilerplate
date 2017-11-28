@@ -191,7 +191,7 @@ class WebpackBaseConfig {
                 path: path.resolve('./dist/assets'),
                 filename: 'app.js',
                 chunkFilename: 'chunk/[chunkhash].chunk.js',
-                publicPath: './assets/'
+                publicPath: '/assets/'
             },
             plugins: [
                 new webpack.LoaderOptionsPlugin({
