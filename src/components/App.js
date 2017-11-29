@@ -9,9 +9,6 @@ import './app.css';
 class AppComponent extends React.Component {
 
     render() {
-
-        console.log('AAAA', this.props);
-
         return (
             <div className="index">
                 <YeomanImage />

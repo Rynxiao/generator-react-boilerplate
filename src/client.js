@@ -5,11 +5,10 @@ import { Provider } from 'react-redux';
 import { Route, BrowserRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
+import { renderRoutes } from 'react-router-config'
 
-import App from './containers/App';
 import configureStore from './stores';
 import routes from './routes/';
-import { renderRoutes } from 'react-router-config'
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();

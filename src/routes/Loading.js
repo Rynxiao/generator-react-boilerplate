@@ -1,9 +1,6 @@
 import React from 'react';
 
 const MyLoadingComponent = ({ isLoading, error }) => {
-
-    console.log('loading', isLoading);
-
     // Handle the loading state
     if (isLoading) {
         return <div>Loading...</div>;

@@ -1,46 +1,24 @@
-import { Route, Switch } from "react-router-dom";
-import Loadable from 'react-loadable';
-import MyLoadingComponent from '../components/MyLoadingComponent';
+import asyncTemplate from './async.template';
 
-const AsyncApp = Loadable({
-    loader: () => import("../containers/App"),
-    loading: MyLoadingComponent
-});
-
-const AsyncApp1 = Loadable({
-    loader: () => import("components/App"),
-    loading: MyLoadingComponent
-});
-
-const AsyncHome = Loadable({
-    loader: () => import("components/Home"),
-    loading: MyLoadingComponent
-});
-
-const AsyncChild = Loadable({
-    loader: () => import("components/Child"),
-    loading: MyLoadingComponent
-});
-
-const AsyncGrandChild = Loadable({
-    loader: () => import("components/GrandChild"),
-    loading: MyLoadingComponent
-});
+const AsyncApp = asyncTemplate(() => import("../containers/App"));
+const AsyncHome = asyncTemplate(() => import("components/Home"));
+const AsyncChild = asyncTemplate(() => import("components/Child"));
+const AsyncGrandChild = asyncTemplate(() => import("components/GrandChild"));
 
 const routes = [
-    { component: AsyncApp,
+    {
+        component: AsyncApp,
         routes: [
-            { path: '/',
-                exact: true,
-                component: AsyncApp1
-            },
-            { path: '/app',
+            {
+                path: '/home',
                 component: AsyncHome
             },
-            { path: '/child/:id',
+            {
+                path: '/child/:id',
                 component: AsyncChild,
                 routes: [
-                    { path: '/child/:id/grand-child',
+                    {
+                        path: '/child/:id/grand-child',
                         component: AsyncGrandChild
                     }
                 ]
