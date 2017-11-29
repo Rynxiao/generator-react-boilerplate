@@ -20,7 +20,10 @@
     "test:watch": "cross-env NODE_ENV=test karma start --autoWatch=true --singleRun=false --reporters=mocha,coverage"
   },
   "repository": "",
-  "keywords": ["react", "boilerplate"],
+  "keywords": [
+    "react",
+    "boilerplate"
+  ],
   "author": "ryn",
   "devDependencies": {
     "babel-core": "^6.7.6",
@@ -69,6 +72,7 @@
     "react-test-renderer": "^16.1.1",
     "redux-logger": "^3.0.6",
     "rimraf": "^2.5.2",
+    "sass-loader": "^6.0.6",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -77,6 +81,7 @@
   "dependencies": {
     "cross-env": "^3.1.0",
     "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
     "react": "^15.0.1",
     "react-css-modules": "^3.7.10",

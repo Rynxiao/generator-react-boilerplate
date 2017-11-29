@@ -33,7 +33,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
                 }),
                 new HtmlWebpackPlugin({
                     filename: path.resolve('./dist/index.html'),
-                    template: path.resolve('./src/index.html'),
+                    template: path.resolve('./src/index-release.html'),
                     inject: 'body'
                 })
             ]

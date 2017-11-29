@@ -7,7 +7,7 @@ class Button extends React.Component {
     render() {
         return (
             <div className="button-component" styleName="button-component">
-                Please edit src\components\Button.js to update this component!
+                this is a button
             </div>
         );
     }

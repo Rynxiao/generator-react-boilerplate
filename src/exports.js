@@ -1,5 +1,5 @@
 // Default export. Please add your own components you want to export here!
-import YeomanImage from './components/YeomanImage';
+import YeomanImage from './components/common/YeomanImage';
 
 export { YeomanImage };
 export default {
