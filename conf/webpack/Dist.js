@@ -6,6 +6,8 @@
  */
 const webpack = require('webpack');
 const WebpackBaseConfig = require('./Base');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 class WebpackDistConfig extends WebpackBaseConfig {
 
@@ -14,20 +16,32 @@ class WebpackDistConfig extends WebpackBaseConfig {
         this.config = {
             cache: false,
             devtool: 'source-map',
-            entry: [
-                './client.js'
-            ],
+            entry: {
+                main: ['./client.js'],
+                vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'react-router-config',
+                    'react-router-redux', 'react-css-modules', 'history']
+            },
             plugins: [
                 new webpack.DefinePlugin({
                     'process.env.NODE_ENV': '"production"'
                 }),
                 new webpack.optimize.AggressiveMergingPlugin(),
-                new webpack.NoEmitOnErrorsPlugin()
+                new webpack.NoEmitOnErrorsPlugin(),
+                new webpack.optimize.CommonsChunkPlugin({
+                    name: 'vendor',
+                    minChunks: Infinity
+                }),
+                new HtmlWebpackPlugin({
+                    filename: path.resolve('./dist/index.html'),
+                    template: path.resolve('./src/index.html'),
+                    inject: 'body'
+                })
             ]
         };
 
         // Deactivate hot-reloading if we run dist build on the dev server
         this.config.devServer.hot = false;
+        this.config.output.filename = '[name].[chunkhash].js';
     }
 
     /**
