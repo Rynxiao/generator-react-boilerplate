@@ -197,7 +197,11 @@ class WebpackBaseConfig {
                 new webpack.LoaderOptionsPlugin({
                     options: {
                         postcss: function () {
-                            return [];
+                            return [
+                                // require('autoprefixer')({
+                                //     browsers: ['last 2 versions', 'ie >= 8']
+                                // })
+                            ];
                         }
                     }
                 })

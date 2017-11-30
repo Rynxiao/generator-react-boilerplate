@@ -18,7 +18,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
             devtool: 'source-map',
             entry: {
                 main: ['./client.js'],
-                vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'react-router-config',
+                vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom',
                     'react-router-redux', 'react-css-modules', 'history']
             },
             plugins: [

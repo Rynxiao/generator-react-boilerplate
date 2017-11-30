@@ -1,0 +1,50 @@
+import React, { Component } from 'react';
+import { is, fromJS } from 'immutable';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import actions from 'actions/';
+
+const Main = MyComponent => {
+    class IndexTemplate extends Component {
+
+        constructor(props, context) {
+            super(props, context);
+        }
+
+        componentDidMount() {
+
+        }
+
+        componentWillReceiveProps(nextProps) {
+
+        }
+
+        shouldComponentUpdate(nextProps, nextState) {
+            return !is(fromJS(this.props), fromJS(nextProps))
+                || !is(fromJS(this.state), fromJS(nextState));
+        }
+
+        render() {
+            return <MyComponent { ...this.props } />;
+        }
+    }
+
+    IndexTemplate.displayName = 'IndexTemplate';
+    IndexTemplate.defaultProps = {};
+
+    function mapStateToProps(state) {
+        const { items } = state;
+        return {
+            items
+        };
+    }
+
+    function mapDispatchToProps(dispatch) {
+        return { actions: bindActionCreators(actions, dispatch) };
+    }
+
+    return withRouter(connect(mapStateToProps, mapDispatchToProps)(IndexTemplate));
+};
+
+export default Main;

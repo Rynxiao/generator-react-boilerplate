@@ -11,7 +11,7 @@ function reduxStore(history, initialState) {
 
     // Build the middleware for intercepting and dispatching navigation actions
     const rMiddleware = routerMiddleware(history);
-    const middlewares = [rMiddleware, loggerMiddleware];
+    const middlewares = [loggerMiddleware, rMiddleware];
 
     const createStoreWithMiddleware = composeEnhancers(applyMiddleware(...middlewares));
     const store = createStoreWithMiddleware(createStore)(
