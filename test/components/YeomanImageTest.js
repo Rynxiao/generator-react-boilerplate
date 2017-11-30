@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import YeomanImage from 'components/YeomanImage';
+import YeomanImage from 'components/common/YeomanImage';
 
 describe('<YeomanImage />', function () {
 

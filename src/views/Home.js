@@ -1,21 +1,16 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import Template from 'components/common/Template';
 
 class Home extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.actions.getItems();
     }
 
     render() {
-        let { items } = this.props;
-        let list = items.get('items');
+        const { items } = this.props;
+        const list = items.get('items');
+
         return (
             <div className="home-component">
                 <nav className="navbar navbar-default">
