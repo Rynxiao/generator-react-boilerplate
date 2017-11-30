@@ -198,9 +198,9 @@ class WebpackBaseConfig {
                     options: {
                         postcss: function () {
                             return [
-                                // require('autoprefixer')({
-                                //     browsers: ['last 2 versions', 'ie >= 8']
-                                // })
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions', 'ie >= 8']
+                                })
                             ];
                         }
                     }
