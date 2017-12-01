@@ -59,7 +59,18 @@ class WebpackBaseConfig {
                         test: /\.js?$/,
                         include: this.srcPathAbsolute,
                         loader: 'babel-loader',
-                        query: { presets: ['es2015'] }
+                        query: {
+                            presets: ['es2015']
+                        }
+                    },
+                    {
+                        enforce: 'pre',
+                        test: /\.js?$/,
+                        include: this.srcPathAbsolute,
+                        loader: 'eslint-loader',
+                        options: {
+                            formatter: require('eslint-friendly-formatter')
+                        }
                     },
                     {
                         test: /^.((?!cssmodule).)*\.css$/,

@@ -17,7 +17,9 @@
         "react/jsx-space-before-closing": ["off"],
         "react/prefer-stateless-function": ["off"],
         "react/jsx-indent": ["error", 4],
-        "no-underscore-dangle": [ "error", { "allowAfterThis": true }],
+        "react/jsx-curly-spacing": ["off"],
+        "react/jsx-indent-props": ["error", 4],
+        "no-underscore-dangle": [ "off"],
         "import/no-unresolved": ["error", {
             "ignore": [
                 "config",
@@ -26,8 +28,14 @@
                 "actions/",
                 "sources/",
                 "styles/",
-                "images/"
+                "images/",
+                "containers"
             ]
+        }],
+        "import/no-extraneous-dependencies": ["off", {
+            "devDependencies": true,
+            "optionalDependencies": false,
+            "peerDependencies": false
         }],
         "indent": ["error", 4, {
             "SwitchCase": 1,
@@ -41,6 +49,14 @@
                 "parameters": 1,
                 "body": 1
             }
-        }]
+        }],
+        "arrow-body-style": ["warn", "as-needed"],
+        "max-len": ["warn", {
+            "ignoreUrls": true,
+            "ignoreStrings": true
+        }],
+        "no-script-url": ["warn"],
+        "quote-props": ["warn", "as-needed"],
+        "arrow-parens": ["error", "as-needed"]
     }
 }

@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MyLoadingComponent = ({ isLoading, error }) => {
-    // Handle the loading state
     if (isLoading) {
         return null;
-    }
-    // Handle the error state
-    else if (error) {
+    } else if (error) {
         return <div>Sorry, there was a problem loading the page.</div>;
     }
-    else {
-        return null;
-    }
+
+    return null;
+};
+
+MyLoadingComponent.displayName = 'MyLoadingComponent';
+MyLoadingComponent.propTypes = {
+    isLoading: PropTypes.bool,
+    error: PropTypes.shape({})
 };
 
 export default MyLoadingComponent;

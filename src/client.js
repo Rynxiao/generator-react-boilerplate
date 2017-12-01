@@ -12,13 +12,13 @@ ReactDOM.render(
 
 if (module.hot) {
     // module.hot.accept('./containers/App', () => {
-        const NextApp = require('./containers/App').default; // eslint-disable-line global-require
+    const NextApp = require('./containers/App').default; // eslint-disable-line global-require
 
-        ReactDOM.render(
-            <AppContainer>
-                <NextApp />
-            </AppContainer>,
-            document.getElementById('app')
-        );
+    ReactDOM.render(
+        <AppContainer>
+            <NextApp />
+        </AppContainer>,
+        document.getElementById('app')
+    );
     // });
 }

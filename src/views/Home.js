@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Template from 'components/common/Template';
 
 class Home extends React.Component {
@@ -72,7 +73,12 @@ class Home extends React.Component {
 }
 
 Home.displayName = 'Home';
-Home.propTypes = {};
+Home.propTypes = {
+    actions: PropTypes.shape({
+        getItems: PropTypes.func
+    }),
+    items: PropTypes.shape({})
+};
 Home.defaultProps = {};
 
 export default Template(Home);

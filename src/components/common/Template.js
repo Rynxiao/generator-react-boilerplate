@@ -8,18 +8,6 @@ import actions from 'actions/';
 const Main = MyComponent => {
     class IndexTemplate extends Component {
 
-        constructor(props, context) {
-            super(props, context);
-        }
-
-        componentDidMount() {
-
-        }
-
-        componentWillReceiveProps(nextProps) {
-
-        }
-
         shouldComponentUpdate(nextProps, nextState) {
             return !is(fromJS(this.props), fromJS(nextProps))
                 || !is(fromJS(this.state), fromJS(nextState));

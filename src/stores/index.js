@@ -16,7 +16,6 @@ function reduxStore(history, initialState) {
 
     if (config.appEnv === 'dev') {
         middlewares.unshift(loggerMiddleware);
-        composeEnhancers = composeEnhancers ? composeEnhancers : compose;
     } else {
         composeEnhancers = compose;
     }
