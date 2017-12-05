@@ -22,9 +22,10 @@ const Main = MyComponent => {
     IndexTemplate.defaultProps = {};
 
     function mapStateToProps(state) {
-        const { items } = state;
+        const { items, g } = state;
         return {
-            items
+            items,
+            g
         };
     }
 

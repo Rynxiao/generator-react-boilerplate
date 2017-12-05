@@ -1,4 +1,5 @@
-import items from './items.js';
+import items from './items';
+import g from './g';
 
-const reducers = { items };
+const reducers = { items, g };
 module.exports = reducers;

@@ -28,14 +28,14 @@ class Home extends React.Component {
                                 <span className="icon-bar" />
                                 <span className="icon-bar" />
                             </button>
-                            <a className="navbar-brand" href="/">App</a>
+                            <a className="navbar-brand" href="/">主页</a>
                         </div>
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                                <li className="active"><a href="/home">Home</a></li>
-                                <li><a href="/about">About</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <li className="active"><a href="/home">我的贴吧</a></li>
+                                <li><a href="/about">我的图书</a></li>
+                                <li><a href="/contact">联系我们</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,7 +75,8 @@ class Home extends React.Component {
 Home.displayName = 'Home';
 Home.propTypes = {
     actions: PropTypes.shape({
-        getItems: PropTypes.func
+        getItems: PropTypes.func,
+        getAsyncItem: PropTypes.func
     }),
     items: PropTypes.shape({})
 };

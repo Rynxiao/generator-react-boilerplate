@@ -236,6 +236,10 @@ class WebpackBaseConfig {
                     this.srcPathAbsolute,
                     'node_modules'
                 ]
+            },
+            node: {
+                net: 'empty',
+                dns: 'empty'
             }
         };
     }

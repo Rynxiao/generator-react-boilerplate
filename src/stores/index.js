@@ -1,9 +1,12 @@
+/* eslint max-len: 0 */
+
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import config from 'config';
 
 import reducers from '../reducers';
+import oMiddleware from '../middlewares';
 
 const loggerMiddleware = createLogger({ collapsed: true });
 let composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -12,10 +15,10 @@ function reduxStore(history, initialState) {
 
     // Build the middleware for intercepting and dispatching navigation actions
     const rMiddleware = routerMiddleware(history);
-    const middlewares = [rMiddleware];
+    const middlewares = [rMiddleware, ...oMiddleware];
 
     if (config.appEnv === 'dev') {
-        middlewares.unshift(loggerMiddleware);
+        middlewares.push(loggerMiddleware);
     } else {
         composeEnhancers = compose;
     }

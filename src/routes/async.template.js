@@ -1,3 +1,5 @@
+/* eslint arrow-body-style:0 */
+
 import Loadable from 'react-loadable';
 import MyLoadingComponent from './Loading';
 

@@ -27,6 +27,7 @@
   "author": "ryn",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "axios": "^0.17.1",
     "babel-core": "^6.7.6",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.4",
@@ -40,6 +41,7 @@
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "copyfiles": "^1.0.0",
+    "create-action": "^0.2.1",
     "css-loader": "^0.26.0",
     "enzyme": "^2.2.0",
     "eslint": "^3.0.0",
@@ -81,10 +83,12 @@
     "webpack-dev-server": "^2.1.0-beta"
   },
   "dependencies": {
+    "axios-jsonp": "^1.0.1",
     "cross-env": "^3.1.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.0",
+    "qs": "^6.5.1",
     "react": "^15.0.1",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.0.1",
@@ -93,6 +97,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
     "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
     "webpack": "^2.1.0-beta.6"
   }
 }

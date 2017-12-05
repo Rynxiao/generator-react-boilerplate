@@ -1,8 +1,8 @@
-import addItem from '../actions/addItem.js';
-import getItems from '../actions/getItems.js';
+import items from './items';
+import g from './g';
 
 const actions = {
-    addItem,
-    getItems
+    ...items,
+    ...g
 };
 module.exports = actions;

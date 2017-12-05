@@ -1,5 +1,8 @@
+/* eslint quote-props: 0 */
+
 import { fromJS } from 'immutable';
-import { GET_ITEMS } from '../actions/const';
+import { handleActions } from 'redux-actions';
+import { GET_ITEMS, GET_ASYNC_ITEM_SUCCESS } from '../actions/const';
 
 const initialState = fromJS({
     items: [
@@ -76,17 +79,29 @@ const initialState = fromJS({
             'is_like': 1,
             'favo_type': 2
         }
-    ]
+    ],
+    books: []
 });
 
-function reducer(state = initialState, action) {
-    switch (action.type) {
-        case GET_ITEMS:
-            return state;
-        default:
-            return state;
+const itemsReducers = handleActions({
+    /**
+     * 获取Items
+     * @param state
+     * @returns {*}
+     */
+    [GET_ITEMS](state) {
+        return state;
+    },
 
+    /**
+     * 异步获取Items
+     * @param state
+     * @param action
+     * @returns {*}
+     */
+    [GET_ASYNC_ITEM_SUCCESS](state, action) {
+        return state.set('books', fromJS(action.payload.result));
     }
-}
+}, initialState);
 
-module.exports = reducer;
+module.exports = itemsReducers;
