@@ -63,6 +63,8 @@ react脚手架(react+redux+react-router+eslint+karma+react devTools)
 - 增加文件分类(images/fonts/media)
 - 生产配置增加文件hash,公共库拆分
 
+## [新增内容](./change.md)
+
 ## 使用
 
 ```javascript
